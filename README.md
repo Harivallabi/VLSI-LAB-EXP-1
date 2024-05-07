@@ -1,4 +1,5 @@
-# VLSI-LAB-EXPERIMENTS
+EXP-01    SIMULATION OF LOGICS GATES,ADDER,SUBTRACTOR
+DATE:
 AIM: To simulate and synthesis Logic Gates,Adders and Subtractor using Xilinx ISE.
 
 APPARATUS REQUIRED: Xilinx 14.7 Spartan6 FPGA
@@ -11,6 +12,7 @@ Logic Gates:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/ee17970c-3ac9-4603-881b-88e2825f41a4)
 
 verilog code:
+```
 Module logicgates(a,b,andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate);
 input a,b;
 output andgate,orgate,xorgate,nandgate,norgate,xnorgate,notgate;
@@ -22,7 +24,7 @@ nor(norgate,a,b);
 xnor(xnorgate,a,b);
 not(notgate,a);
 endmodule
-
+```
 output:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-1/assets/159146834/2965c28d-ddca-400a-a332-9844b224ed16)
 
@@ -32,13 +34,17 @@ output:
 Half Adder:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/0e1ecb96-0c25-4556-832b-aeeedfdfe7b9)
+
 verilog code:
+```
 module ha(x,y,a,b);
 input x,y;
 output a,b;
 xor x1(a,x,y);
 and x2(b,x,y);
 endmodule
+```
+
 output:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-1/assets/159146834/8fbd7a33-eb61-41b9-9622-4b812f7fe82b)
 
@@ -48,7 +54,9 @@ output:
 Full adder:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/9bb3964c-438f-469d-a3de-c1cca6f323fb)
+
 verilog code:
+```
 module fa(a,b,cin,sum,carry);
 input a,b,cin;
 output sum,carry;
@@ -59,6 +67,7 @@ xor x3(sum,w1,cin);
 and x4(w3,w1,cin);
 or x5(carry,w3,w2);
 endmodule
+```
 output:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-1/assets/159146834/ac345e41-7d77-4b50-b09c-e4e17dbe0c73)
 
@@ -69,7 +78,7 @@ Half Subtractor:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/731470b7-eb4e-49f8-8bb7-2994052a7184)
 verilog code:
-
+```
 module hs(x,y,d,b);
 input x,y;
 output d,b;
@@ -78,6 +87,7 @@ xor x1(d,x,y);
 not n1(w,x);
 and a1(b,y,w);
 endmodule
+```
 output:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-1/assets/159146834/6fbca922-73b4-49ef-8fa1-8b06d313eea9)
 
@@ -90,6 +100,7 @@ Full Subtractor:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/d66f874b-c1f2-44b3-a035-7149b56430c1)
 verilog code:
+```
 module fs(a,b,cin,d,e);
 input a,b,cin;
 output d,e;
@@ -102,6 +113,7 @@ not n2(w3,w2);
 and a2(w5,w3,cin);
 or o1(e,w5,w4);
 endmodule
+```
 output:
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-1/assets/159146834/2ee62656-4891-4df1-8e66-4c4957c664c1)
 
@@ -112,7 +124,9 @@ output:
 8 Bit Ripple Carry Adder
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXPERIMENTS/assets/6987778/7385a408-40a5-4203-8050-b72818622d79)
+
 verilog code:
+```
 module fa(a,b,cin,sum,carry);
 input a,b,cin;
 output sum,carry;
@@ -155,6 +169,7 @@ fa g2(.a(a[1]),
       .carry(carry)
       );
   endmodule
+```
 
 
 
